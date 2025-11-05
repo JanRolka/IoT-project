@@ -1,0 +1,13 @@
+# Target labels
+ bootloader
+# Source files and their labels
+/home/rolowany/esp/wifi/build/CMakeFiles/bootloader
+/home/rolowany/esp/wifi/build/CMakeFiles/bootloader.rule
+/home/rolowany/esp/wifi/build/CMakeFiles/bootloader-complete.rule
+/home/rolowany/esp/wifi/build/bootloader-prefix/src/bootloader-stamp/bootloader-build.rule
+/home/rolowany/esp/wifi/build/bootloader-prefix/src/bootloader-stamp/bootloader-configure.rule
+/home/rolowany/esp/wifi/build/bootloader-prefix/src/bootloader-stamp/bootloader-download.rule
+/home/rolowany/esp/wifi/build/bootloader-prefix/src/bootloader-stamp/bootloader-install.rule
+/home/rolowany/esp/wifi/build/bootloader-prefix/src/bootloader-stamp/bootloader-mkdir.rule
+/home/rolowany/esp/wifi/build/bootloader-prefix/src/bootloader-stamp/bootloader-patch.rule
+/home/rolowany/esp/wifi/build/bootloader-prefix/src/bootloader-stamp/bootloader-update.rule

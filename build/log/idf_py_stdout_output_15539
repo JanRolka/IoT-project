@@ -1,0 +1,77 @@
+Command: ninja flash
+[1/5] cd /home/rolowany/esp/wifi/build/esp-idf/esptool_py && /home/rolowany/.espressif/python_env/idf5.5_py3.12_env/bin/python /home/rolowany/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 partition --type app /home/rolowany/esp/wifi/build/partition_table/partition-table.bin /home/rolowany/esp/wifi/build/wifi.bin
+wifi.bin binary size 0xbbca0 bytes. Smallest app partition is 0x1a9000 bytes. 0xed360 bytes (56%) free.
+[2/5] Performing build step for 'bootloader'
+[1/1] cd /home/rolowany/esp/wifi/build/bootloader/esp-idf/esptool_py && /home/rolowany/.espressif/python_env/idf5.5_py3.12_env/bin/python /home/rolowany/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 /home/rolowany/esp/wifi/build/bootloader/bootloader.bin
+Bootloader binary size 0x6680 bytes. 0x980 bytes (8%) free.
+[3/5] No install step for 'bootloader'
+[4/5] Completed 'bootloader'
+[4/5] cd /home/rolowany/esp/esp-idf/components/esptool_py && /usr/bin/cmake -D IDF_PATH=/home/rolowany/esp/esp-idf -D "SERIAL_TOOL=/home/rolowany/.espressif/python_env/idf5.5_py3.12_env/bin/python;;/home/rolowany/esp/esp-idf/components/esptool_py/esptool/esptool.py;--chip;esp32" -D "SERIAL_TOOL_ARGS=--before=default_reset;--after=hard_reset;write_flash;@flash_args" -D WORKING_DIRECTORY=/home/rolowany/esp/wifi/build -P /home/rolowany/esp/esp-idf/components/esptool_py/run_serial_tool.cmake
+esptool.py --chip esp32 -p /dev/ttyUSB0 -b 460800 --before=default_reset --after=hard_reset write_flash --flash_mode dio --flash_freq 40m --flash_size 4MB 0x1000 bootloader/bootloader.bin 0x20000 wifi.bin 0x8000 partition_table/partition-table.bin 0xf000 ota_data_initial.bin
+esptool.py v4.10.0
+Serial port /dev/ttyUSB0
+Connecting......
+Chip is ESP32-D0WDQ6 (revision v1.0)
+Features: WiFi, BT, Dual Core, 240MHz, VRef calibration in efuse, Coding Scheme None
+Crystal is 40MHz
+MAC: 08:3a:f2:52:d5:bc
+Uploading stub...
+Running stub...
+Stub running...
+Changing baud rate to 460800
+Changed.
+Configuring flash size...
+Flash will be erased from 0x00001000 to 0x00007fff...
+Flash will be erased from 0x00020000 to 0x000dbfff...
+Flash will be erased from 0x00008000 to 0x00008fff...
+Flash will be erased from 0x0000f000 to 0x00010fff...
+SHA digest in image updated
+Compressed 26240 bytes to 16488...
+Writing at 0x00001000... (50 %)
+Writing at 0x000075f7... (100 %)
+Wrote 26240 bytes (16488 compressed) at 0x00001000 in 0.8 seconds (effective 264.7 kbit/s)...
+Hash of data verified.
+Compressed 769184 bytes to 482068...
+Writing at 0x00020000... (3 %)
+Writing at 0x0002c791... (6 %)
+Writing at 0x00034c2a... (10 %)
+Writing at 0x0003f7e9... (13 %)
+Writing at 0x00045114... (16 %)
+Writing at 0x0004b24e... (20 %)
+Writing at 0x00050f9b... (23 %)
+Writing at 0x00056f21... (26 %)
+Writing at 0x0005cdae... (30 %)
+Writing at 0x000629a2... (33 %)
+Writing at 0x00067e36... (36 %)
+Writing at 0x0006da5d... (40 %)
+Writing at 0x00073535... (43 %)
+Writing at 0x00078d7f... (46 %)
+Writing at 0x0007e460... (50 %)
+Writing at 0x000841e1... (53 %)
+Writing at 0x00089e64... (56 %)
+Writing at 0x0008f853... (60 %)
+Writing at 0x00095481... (63 %)
+Writing at 0x0009b00f... (66 %)
+Writing at 0x000a0aa1... (70 %)
+Writing at 0x000a680f... (73 %)
+Writing at 0x000ac2da... (76 %)
+Writing at 0x000b1c58... (80 %)
+Writing at 0x000bbdf9... (83 %)
+Writing at 0x000c21d0... (86 %)
+Writing at 0x000c82d4... (90 %)
+Writing at 0x000cdcce... (93 %)
+Writing at 0x000d3e9d... (96 %)
+Writing at 0x000d9222... (100 %)
+Wrote 769184 bytes (482068 compressed) at 0x00020000 in 10.9 seconds (effective 565.3 kbit/s)...
+Hash of data verified.
+Compressed 3072 bytes to 129...
+Writing at 0x00008000... (100 %)
+Wrote 3072 bytes (129 compressed) at 0x00008000 in 0.1 seconds (effective 378.4 kbit/s)...
+Hash of data verified.
+Compressed 8192 bytes to 31...
+Writing at 0x0000f000... (100 %)
+Wrote 8192 bytes (31 compressed) at 0x0000f000 in 0.1 seconds (effective 535.4 kbit/s)...
+Hash of data verified.
+
+Leaving...
+Hard resetting via RTS pin...

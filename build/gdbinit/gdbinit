@@ -1,0 +1,2 @@
+source /home/rolowany/esp/wifi/build/gdbinit/symbols
+source /home/rolowany/esp/wifi/build/gdbinit/connect

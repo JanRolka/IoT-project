@@ -1,0 +1,2 @@
+source /home/rolowany/esp/wifi/build/bootloader/gdbinit/symbols
+source /home/rolowany/esp/wifi/build/bootloader/gdbinit/connect
